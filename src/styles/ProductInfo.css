@@ -1,0 +1,14 @@
+.ProductInfo {
+    margin-top: 3%;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    align-items: center;
+    font-size: 180%;
+    color: cornflowerblue;
+}
+
+
+.ImgProductInfo {
+    width: 17%;
+    border-radius: 30px;
+}
