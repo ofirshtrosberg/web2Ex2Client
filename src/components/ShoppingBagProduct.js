@@ -1,26 +1,25 @@
 import "../styles/Popup.css";
+
 import Popup from "./Popup";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
-
-function Product(prod) {
+function ShoppingBagProduct(prod) {
   const [buttonPopup, setButtonPopup] = useState(false);
   // console.log(this);
   return (
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">
-        <Card.Img
-          height={180}
-          src={prod.imgsrc1}
-          onClick={(event, prod) => setButtonPopup(true)}
-        />
+        <Card.Img variant="top" height={180} src={prod.imgsrc1} />
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
           <Card.Text>{prod.price}$</Card.Text>
-          <Button claasName="m-2" variant="dark">
-            Add to cart
+          <Button
+            variant="dark"
+            onClick={(event, prod) => setButtonPopup(true)}
+          >
+            Description
           </Button>
         </Card.Body>
       </Card>
@@ -49,4 +48,4 @@ function Product(prod) {
     </Container>
   );
 }
-export default Product;
+export default ShoppingBagProduct;
