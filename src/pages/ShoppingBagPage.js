@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
-import "../styles/ProductsPage.css";
-
-const ProductsPage = () => {
+const ShoppingBagPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("http://localhost:3000/userProducts/shoppingBag")
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
   }, []);
   return (
     <div>
-      <h4 className="pageTitle">Products list:</h4>
+      <h4 className="pageTitle">Shopping Bag:</h4>
       {products.map((item) => (
         <Product
           id={item._id}
@@ -28,4 +26,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default ShoppingBagPage;

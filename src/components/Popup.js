@@ -1,8 +1,8 @@
 import React from "react";
 
 function Popup(props, item){
-    console.log(item)
-    console.log(props.item)
+    // console.log(item)
+    // console.log(props.item)
     return (props.trigger) ? (
         <div className="popup">
             <div className="popup-inner">
