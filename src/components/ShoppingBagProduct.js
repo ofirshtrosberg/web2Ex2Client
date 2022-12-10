@@ -16,7 +16,7 @@ function ShoppingBagProduct(prod) {
           <Card.Title>{prod.title}</Card.Title>
           <Card.Text>{prod.price}$</Card.Text>
           <Button
-            variant="primary"
+            variant="dark"
             onClick={(event, prod) => setButtonPopup(true)}
           >
             Description

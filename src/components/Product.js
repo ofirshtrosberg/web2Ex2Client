@@ -1,10 +1,10 @@
 import "../styles/Popup.css";
-
 import Popup from "./Popup";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
+
 function Product(prod) {
   const [buttonPopup, setButtonPopup] = useState(false);
   // console.log(this);
@@ -19,7 +19,7 @@ function Product(prod) {
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
           <Card.Text>{prod.price}$</Card.Text>
-          <Button claasName="m-2" variant="primary">
+          <Button claasName="m-2" variant="dark">
             Add to cart
           </Button>
         </Card.Body>

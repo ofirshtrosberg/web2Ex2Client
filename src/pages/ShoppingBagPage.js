@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
 import ShoppingBagProduct from "../components/ShoppingBagProduct";
+import { Container } from "react-bootstrap";
+
 const ShoppingBagPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -9,7 +12,9 @@ const ShoppingBagPage = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
+    <>
+    <NavBar></NavBar>
+    <Container>
       <h4 className="pageTitle">Shopping Bag:</h4>
       {products.map((item) => (
         <ShoppingBagProduct
@@ -22,7 +27,8 @@ const ShoppingBagPage = () => {
           store={item.store}
         ></ShoppingBagProduct>
       ))}
-    </div>
+    </Container>
+    </>
   );
 };
 

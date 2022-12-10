@@ -1,0 +1,12 @@
+.header_navbar {
+    background-color: #a67d85;
+}
+
+.search_input {
+    background-color: #ffecf0;
+    border-radius: 18px;
+}
+
+.search_input:focus {
+    background-color: #ffecf0;
+}
