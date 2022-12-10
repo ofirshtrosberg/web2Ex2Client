@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Product from "../components/Product";
+import ShoppingBagProduct from "../components/ShoppingBagProduct";
 const ShoppingBagPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -12,7 +12,7 @@ const ShoppingBagPage = () => {
     <div>
       <h4 className="pageTitle">Shopping Bag:</h4>
       {products.map((item) => (
-        <Product
+        <ShoppingBagProduct
           id={item._id}
           title={item.title}
           price={item.price}
@@ -20,7 +20,7 @@ const ShoppingBagPage = () => {
           imgsrc2={item.imgsrc2}
           description={item.description}
           store={item.store}
-        ></Product>
+        ></ShoppingBagProduct>
       ))}
     </div>
   );

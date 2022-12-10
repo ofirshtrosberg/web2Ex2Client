@@ -1,12 +1,11 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 function Popup(props, item){
-    // console.log(item)
-    // console.log(props.item)
     return (props.trigger) ? (
-        <div className="popup">
+        <div className="popup text-center">
             <div className="popup-inner">
-                <button  id="my_btn" className="close-btn" onClick={() => props.setTrigger(false)}> Close</button>
+                <Button className="close-btn btn-light" onClick={() => props.setTrigger(false)}> Close</Button>
                 <div className="ProductInfo">
                     
       <label className="Product_description"><u>Description:</u>&nbsp;{props.item.description}</label>
