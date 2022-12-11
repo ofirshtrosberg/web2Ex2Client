@@ -10,3 +10,6 @@
 .search_input:focus {
     background-color: #ffecf0;
 }
+.store_icon{
+    width: 100px;
+}
