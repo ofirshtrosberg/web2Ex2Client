@@ -1,5 +1,7 @@
 import "../styles/NavBar.css";
-import SearchIcon from "@mui/icons-material/Search";
+// import {SearchIcon} from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import StorefrontIcon from "@mui/icons-material/Storefront";
 import {
   Container,
   Navbar,
@@ -14,7 +16,9 @@ function NavBar() {
     <>
       <Navbar expand={"md"} className="mb-3 header_navbar">
         <Container fluid>
-          <Navbar.Brand href="/">Supermarket</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <StorefrontIcon />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
@@ -29,9 +33,13 @@ function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/shoppingBag">Shopping Bag</Nav.Link>
+                <Nav.Link href="/shoppingBag">
+                  <ShoppingCartIcon />
+                  <label className="d-md-none">&nbsp;Cart</label>
+                </Nav.Link>
               </Nav>
-              <Form className="d-flex">
+              {/* for future search */}
+              {/* <Form className="d-flex">
                 <Form.Control
                   type="search"
                   placeholder="Search"
@@ -41,7 +49,7 @@ function NavBar() {
                 <Button variant="outline-dark">
                   <SearchIcon />
                 </Button>
-              </Form>
+              </Form> */}
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
