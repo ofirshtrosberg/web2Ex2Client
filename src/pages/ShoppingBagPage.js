@@ -1,12 +1,11 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import "../styles/ShoppingBagProduct.css"
-import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/ShoppingBagPage.css";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-import { DataGrid, gridClasses } from '@mui/x-data-grid';
+import { DataGrid} from '@mui/x-data-grid';
 import axios from "axios";
 import { DeleteOutline } from "@mui/icons-material";
 
@@ -15,7 +14,6 @@ const tabledata = "http://localhost:3000/userProducts/shoppingBag";
 export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
 
-  
 useEffect(() => {
     fetch(tabledata)
       .then((Response) => Response.json())
@@ -24,23 +22,10 @@ useEffect(() => {
   }, []); 
   
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8080/api/products/admin/delete/${id}`);
+    axios.delete(`http://localhost:3000/userProducts/shoppingBag/delete/${id}`);
     setProducts(products.filter((item) => item._id !== id));
   };
 
- /* const handleAddProduct = (product) => {
-    const ProductExist = products.find((item) =>item.id === product.id);
-    if(ProductExist) {
-      setProducts(products.map((item) => item.id === product.id?
-      {...ProductExist, quantity:ProductExist.quantity +1}:items)
-    
-    );
-  } else {
-    setProducts([...products, {...product, quantity:1}]);
-  }
-
-  }; 
-*/
   const columns =[
     {field: "title",headerName: "Product",width: 150,},
 
@@ -59,18 +44,13 @@ useEffect(() => {
       headerName: "Price",
       width: 120,
     },
-    {field: "amount",
-    headerName: "Amount",
-    width: 120,
-  },
-  {
+    {
     field: "action",
     headerName: "Action",
     width: 80,
     renderCell: (params) => {
       return (
         <>
-
         <DeleteOutline
               className="productDelete"
               onClick={() => handleDelete(params.row.id)}
@@ -78,8 +58,7 @@ useEffect(() => {
           </>
         );
       },
-
-  },
+    },
 
   ];
   
@@ -88,13 +67,10 @@ useEffect(() => {
     [products]
   );
 
- 
-
   return (
     <>
     <NavBar></NavBar>
     <Box sx={{height: 400,width: '100%',}}>
-  
       <Typography variant="h3" component="h3"sx={{ textAlign: 'center', mt: 3, mb: 3 }}>
         Shopping Bag:
       </Typography>
@@ -104,10 +80,13 @@ useEffect(() => {
         columns={columns}
         pageSize={15}
         rowsPerPageOptions={[products.length]}
-        
       />
-       
     </Box>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
     </>
   );
 };

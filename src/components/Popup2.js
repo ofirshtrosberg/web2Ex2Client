@@ -15,7 +15,9 @@ function Popup2(props){
         fetch(
           "http://localhost:3000/userProducts"
         ).catch((err) => console.log(err));
-      };
+      window.location.reload();
+    };
+
     return (props.trigger) ? (
         <div className="popup text-center">
             <div className="popup-inner">
