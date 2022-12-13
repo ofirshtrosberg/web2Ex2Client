@@ -22,11 +22,21 @@ useEffect(() => {
   }, []); 
   
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/userProducts/shoppingBag/delete/${id}`);
-    setProducts(products.filter((item) => item._id !== id));
-  };
+    // axios.delete(`http://localhost:3000/userProducts/shoppingBag/delete/${id}`);
+    // setProducts(products.filter((item) => item._id !== id));
+    fetch("http://localhost:3000/userProducts/shoppingBag/delete", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        productToDelete: id,
+      }),
+    }).then((Response) => Response.json())
+    .then((data) => setProducts(data))
+    .catch((err) => console.log(err));
+    };
 
   const columns =[
+    {field: "_id",headerName: "Product",width:0,},
     {field: "title",headerName: "Product",width: 150,},
 
     {field:"imgsrc1", headerName: "Photo",width: 400,renderCell: (params) => {
@@ -53,7 +63,7 @@ useEffect(() => {
         <>
         <DeleteOutline
               className="productDelete"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             />
           </>
         );
