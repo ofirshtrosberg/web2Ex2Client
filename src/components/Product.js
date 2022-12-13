@@ -32,7 +32,7 @@ fetch("http://localhost:3000/addProductToCart", {
         />
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
-          <Card.Text>{prod.price}$</Card.Text>
+          <Card.Text>{prod.price}&nbsp;₪</Card.Text>
           <Button className="m-2" variant="dark" onClick={addToCartHandler}>
             Add to cart
           </Button>
