@@ -21,7 +21,6 @@ fetch("http://localhost:3000/addProductToCart", {
 });
 };
 
-  // console.log(this);
   return (
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">

@@ -1,5 +1,4 @@
 import "../styles/NavBar.css";
-// import {SearchIcon} from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import {
