@@ -1,5 +1,5 @@
 import "../styles/Popup.css";
-import Popup from "./Popup";
+import Popup1 from "./Popup";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -25,7 +25,7 @@ function Product(prod) {
         </Card.Body>
       </Card>
       <div>
-        <Popup
+        <Popup1
           class="product_details_popup"
           trigger={buttonPopup}
           setTrigger={setButtonPopup}
@@ -44,7 +44,7 @@ function Product(prod) {
               <u>Where to buy :</u>&nbsp;{prod.store}
             </label>
           </div>
-        </Popup>
+        </Popup1>
       </div>
     </Container>
   );

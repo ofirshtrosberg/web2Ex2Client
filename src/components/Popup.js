@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-function Popup(props, item){
+function Popup1(props, item){
     return (props.trigger) ? (
         <div className="popup text-center">
             <div className="popup-inner">
@@ -22,6 +22,6 @@ function Popup(props, item){
     ): "";
 }
 
-export default Popup
+export default Popup1
 
 
