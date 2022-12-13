@@ -1,7 +1,9 @@
+
 import React, { useEffect, useMemo, useState } from "react";
+import "../styles/ShoppingBagProduct.css"
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/ShoppingBagPage.css";
-//import * as Mui from '@material-ui/core';
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { DataGrid, gridClasses } from '@mui/x-data-grid';

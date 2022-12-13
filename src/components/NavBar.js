@@ -17,7 +17,7 @@ function NavBar() {
       <Navbar expand={"md"} className="mb-3 header_navbar">
         <Container fluid>
           <Navbar.Brand href="/">
-            <StorefrontIcon />
+            <StorefrontIcon className="store_icon" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Navbar.Offcanvas
@@ -34,7 +34,7 @@ function NavBar() {
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="/shoppingBag">
-                  <ShoppingCartIcon />
+                  <ShoppingCartIcon className="nav_icon" />
                   <label className="d-md-none">&nbsp;Cart</label>
                 </Nav.Link>
               </Nav>
