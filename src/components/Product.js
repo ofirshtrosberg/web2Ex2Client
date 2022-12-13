@@ -25,6 +25,7 @@ fetch("http://localhost:3000/addProductToCart", {
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">
         <Card.Img
+          className="product_img"
           height={180}
           src={prod.imgsrc1}
           onClick={(event, prod) => setButtonPopup(true)}
