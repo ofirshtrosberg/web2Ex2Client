@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import "../styles/ProductsPage.css";
 import "../styles/Product.css"
 import { Container, Row, Col } from "react-bootstrap";
-
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
