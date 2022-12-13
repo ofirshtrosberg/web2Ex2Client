@@ -14,12 +14,10 @@ function ShoppingBagProduct(prod) {
         <Card.Body>
           <Card.Text>{prod.price}$</Card.Text>
         <Card.Img
-          className="product_img"
           variant="top"
           height={180}
           src={prod.imgsrc1}
         />
-        <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
           {/* <Button
           <Card.Text>{prod.price}&nbsp;₪</Card.Text>
