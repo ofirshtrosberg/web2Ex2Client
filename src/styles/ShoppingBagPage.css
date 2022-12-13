@@ -1,0 +1,13 @@
+
+.productImg {
+    align-items: center;  
+    width: 130px;
+    height: 130px;
+    border-radius: 5%;
+     
+  }
+
+.productDelete{
+    color: red;
+    cursor: pointer;
+}

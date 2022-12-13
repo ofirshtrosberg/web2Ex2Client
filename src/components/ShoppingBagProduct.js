@@ -11,9 +11,9 @@ function ShoppingBagProduct(prod) {
   return (
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">
+      <Card.Title>{prod.title}</Card.Title>
         <Card.Img variant="top" height={180} src={prod.imgsrc1} />
         <Card.Body>
-          <Card.Title>{prod.title}</Card.Title>
           <Card.Text>{prod.price}$</Card.Text>
           <Button
             variant="dark"

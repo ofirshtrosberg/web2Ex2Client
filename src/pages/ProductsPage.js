@@ -3,7 +3,6 @@ import Product from "../components/Product";
 import NavBar from "../components/NavBar";
 import "../styles/ProductsPage.css";
 import { Container, Row, Col } from "react-bootstrap";
-
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
