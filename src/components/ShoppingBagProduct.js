@@ -19,7 +19,7 @@ function ShoppingBagProduct(prod) {
         />
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
-          <Card.Text>{prod.price}$</Card.Text>
+          <Card.Text>{prod.price}&nbsp;₪</Card.Text>
           <Button
             variant="dark"
             onClick={(event, prod) => setButtonPopup(true)}
