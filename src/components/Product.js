@@ -1,25 +1,40 @@
 import "../styles/Popup.css";
 import Popup1 from "./Popup";
 import { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
 
 function Product(prod) {
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [productid, setProductId] = useState(prod.id);
+
+  const addToCartHandler = (event) => {
+
+fetch("http://localhost:3000/addProductToCart", {
+  method: "post",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    productToAdd: productid,
+  }),
+});
+};
+
   // console.log(this);
   return (
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">
         <Card.Img
+          className="product_img"
           height={180}
           src={prod.imgsrc1}
           onClick={(event, prod) => setButtonPopup(true)}
         />
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
-          <Card.Text>{prod.price}$</Card.Text>
-          <Button claasName="m-2" variant="dark">
+          <Card.Text>{prod.price}&nbsp;₪</Card.Text>
+          <Button className="m-2" variant="dark" onClick={addToCartHandler}>
             Add to cart
           </Button>
         </Card.Body>
