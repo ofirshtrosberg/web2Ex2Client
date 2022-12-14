@@ -1,16 +1,7 @@
 import "../styles/NavBar.css";
-// import {SearchIcon} from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import {
-  Container,
-  Navbar,
-  Offcanvas,
-  Nav,
-  NavDropdown,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Container, Navbar, Offcanvas, Nav } from "react-bootstrap";
 function NavBar() {
   return (
     <>
