@@ -1,13 +1,17 @@
-
 .productImg {
-    align-items: center;  
-    width: 130px;
-    height: 130px;
-    border-radius: 5%;
-     
-  }
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 5%;
 
-.productDelete{
-    color: red;
-    cursor: pointer;
+}
+
+.productDelete {
+  color: #94626d;
+  cursor: pointer;
+  font-size: xx-large !important;
+}
+
+.productDelete:hover {
+  color: #683a44;
 }

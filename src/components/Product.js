@@ -11,17 +11,14 @@ function Product(prod) {
   const [productid, setProductId] = useState(prod.id);
 
   const addToCartHandler = (event) => {
-
-fetch("http://localhost:3000/addProductToCart", {
-  method: "post",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    productToAdd: productid,
-  }),
-});
-};
-
-  // console.log(this);
+    fetch("http://localhost:3000/addProductToCart", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        productToAdd: productid,
+      }),
+    });
+  };
   return (
     <Container>
       <Card style={{ width: "18rem" }} className="text-center">
