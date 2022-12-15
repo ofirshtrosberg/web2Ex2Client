@@ -3,7 +3,18 @@ import { Button } from "react-bootstrap";
 
 function Popup2(props) {
   const submitHandler = (event) => {
-    console.log("#");
+    var nameValue = document.getElementById("cname").value;
+    console.log(nameValue);
+
+    fetch("http://localhost:3000/addOrder", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+      client_name: document.getElementById("cname").value,
+      credit_card_number: document.getElementById("ccnum").value
+      }),
+    });
+    ;
 
     event.preventDefault();
 
