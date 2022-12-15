@@ -54,7 +54,7 @@ export default function ShoppingBagPage() {
       width: 120,
     },
     {
-      field: "price",
+      field: "amount",
       headerName: "Amount",
       width: 120,
     },
