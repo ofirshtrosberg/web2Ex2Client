@@ -16,10 +16,9 @@ export default function ShoppingBagPage() {
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
-    console.log("page load");
-    console.log(products);
   }, []);
   useEffect(() => {
+    setTotalPrice(0);
     products.map((product) =>
       setTotalPrice((totalPrice) => totalPrice + product.price * product.amount)
     );
@@ -35,8 +34,6 @@ export default function ShoppingBagPage() {
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
-    console.log("after delete");
-    console.log(products);
   };
 
   const columns = [
