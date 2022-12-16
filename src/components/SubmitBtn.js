@@ -10,7 +10,7 @@ function SubmitBtn(prod) {
   return (
     <Container>
       <div>
-        <Button variant="dark" onClick={(event) => setButtonCoPopup(true)}>
+        <Button variant="dark" className='pay_now_button' onClick={(event) => setButtonCoPopup(true)}>
           Pay Now
         </Button>
       </div>
@@ -20,22 +20,6 @@ function SubmitBtn(prod) {
           trigger={buttonCoPopup}
           setTrigger={setButtonCoPopup}
         >
-          <div className="CheckOutForm">
-            <label className="check_out_form_1">
-              <u>Description:</u>&nbsp;{"hi"}
-            </label>
-            <br></br>
-            <label className="Product_description">
-              <u>Description A:</u>&nbsp;{"hi"}
-            </label>
-            <br></br>
-            <div></div>
-            <br></br>
-            <br></br>
-            <label className="Product_store">
-              <u>Where to buy :</u>&nbsp;{"ho"}
-            </label>
-          </div>
         </Popup2>
       </div>
     </Container>

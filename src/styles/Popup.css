@@ -33,3 +33,10 @@
     height: 250px;
     border-radius: 15px;
 }
+
+.pay_now_button{
+    position: fixed; /* or absolute */
+    left: 50%;
+}
+
+    
