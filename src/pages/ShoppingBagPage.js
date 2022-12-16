@@ -10,14 +10,18 @@ import { DeleteOutline } from "@mui/icons-material";
 
 export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
+  const [totalPrice, setTotalPrice] = useState();
 
   useEffect(() => {
     fetch("http://localhost:3000/userProducts/shoppingBag")
       .then((Response) => Response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {setProducts(data)
+        products.map((product) => setTotalPrice(totalPrice +product.price*product.amount))
+      })
       .catch((err) => console.log(err));
       console.log("page load");
       console.log(products);
+      console.log("sum is:", totalPrice)
   }, []);
 
   const handleDelete = (id) => {
@@ -29,7 +33,10 @@ export default function ShoppingBagPage() {
       }),
     })
       .then((Response) => Response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {setProducts(data)
+         products.map((product) => setTotalPrice(totalPrice +product.price*product.amount))
+      })
+
       .catch((err) => console.log(err));
     console.log("after delete");
     console.log(products);
@@ -78,6 +85,8 @@ export default function ShoppingBagPage() {
     },
   ];
 
+
+
   const rows = useMemo(
     () => products.map((row, index) => ({ ...row, id: row._id })),
     [products]
@@ -98,6 +107,9 @@ export default function ShoppingBagPage() {
       </Box>
       <br></br>
       <br></br>
+      <div className="total">
+            <p>sum is : {totalPrice}</p>
+      </div>
       <br></br>
       <br></br>
     </>
