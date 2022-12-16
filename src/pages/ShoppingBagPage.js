@@ -10,7 +10,7 @@ import { DeleteOutline } from "@mui/icons-material";
 
 export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     fetch("http://localhost:3000/userProducts/shoppingBag")
       .then((Response) => Response.json())
@@ -19,7 +19,11 @@ export default function ShoppingBagPage() {
       console.log("page load");
       console.log(products);
   }, []);
-
+  useEffect(() => {
+    products.map((product) =>
+      setTotalPrice((totalPrice) => totalPrice + product.price * product.amount)
+    );
+  }, [products]);
   const handleDelete = (id) => {
     fetch("http://localhost:3000/userProducts/shoppingBag/delete", {
       method: "post",
