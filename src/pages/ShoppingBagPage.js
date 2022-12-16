@@ -8,15 +8,16 @@ import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
 import { DeleteOutline } from "@mui/icons-material";
 
-const tabledata = "http://localhost:3000/userProducts/shoppingBag";
 export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(tabledata)
+    fetch("http://localhost:3000/userProducts/shoppingBag")
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
+      console.log("page load");
+      console.log(products);
   }, []);
 
   const handleDelete = (id) => {
@@ -30,6 +31,8 @@ export default function ShoppingBagPage() {
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
+    console.log("after delete");
+    console.log(products);
   };
 
   const columns = [
