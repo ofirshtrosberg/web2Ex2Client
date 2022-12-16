@@ -16,8 +16,8 @@ export default function ShoppingBagPage() {
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
-      console.log("page load");
-      console.log(products);
+    console.log("page load");
+    console.log(products);
   }, []);
   useEffect(() => {
     products.map((product) =>
@@ -104,6 +104,9 @@ export default function ShoppingBagPage() {
       <br></br>
       <br></br>
       <br></br>
+      <div className="total text-center">
+        <p>Total price : {totalPrice} ₪</p>
+      </div>
     </>
   );
 }
