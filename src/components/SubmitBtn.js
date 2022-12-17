@@ -10,7 +10,11 @@ function SubmitBtn(prod) {
   return (
     <Container>
       <div>
-        <Button variant="dark" className='pay_now_button' onClick={(event) => setButtonCoPopup(true)}>
+        <Button
+          variant="dark"
+          className="pay_now_button"
+          onClick={(event) => setButtonCoPopup(true)}
+        >
           Pay Now
         </Button>
       </div>
@@ -19,8 +23,7 @@ function SubmitBtn(prod) {
           class="checkout_popup"
           trigger={buttonCoPopup}
           setTrigger={setButtonCoPopup}
-        >
-        </Popup2>
+        ></Popup2>
       </div>
     </Container>
   );

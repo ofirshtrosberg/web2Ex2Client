@@ -28,15 +28,15 @@
     font-size: 180%;
     color: rgb(2, 2, 2);
 }
+
 .ImgProductInfo {
     width: 250px;
     height: 250px;
     border-radius: 15px;
 }
 
-.pay_now_button{
-    position: fixed; /* or absolute */
-    left: 50%;
+.pay_now_button {
+    /* position: fixed; or absolute */
+    display: block;
+    margin: auto;
 }
-
-    

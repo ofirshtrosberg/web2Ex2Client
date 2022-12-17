@@ -3,23 +3,24 @@ import "../styles/ShoppingBagProduct.css";
 import NavBar from "../components/NavBar";
 import "../styles/ShoppingBagPage.css";
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import axios from "axios";
 import { DeleteOutline } from "@mui/icons-material";
 
 export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     fetch("http://localhost:3000/userProducts/shoppingBag")
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
-      console.log("page load");
-      console.log(products);
   }, []);
-
+  useEffect(() => {
+    setTotalPrice(0);
+    products.map((product) =>
+      setTotalPrice((totalPrice) => totalPrice + product.price * product.amount)
+    );
+  }, [products]);
   const handleDelete = (id) => {
     fetch("http://localhost:3000/userProducts/shoppingBag/delete", {
       method: "post",
@@ -31,8 +32,6 @@ export default function ShoppingBagPage() {
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
-    console.log("after delete");
-    console.log(products);
   };
 
   const columns = [
@@ -97,8 +96,9 @@ export default function ShoppingBagPage() {
         />
       </Box>
       <br></br>
-      <br></br>
-      <br></br>
+      <div className="total text-center">
+        <p>Total price : {totalPrice} ₪</p>
+      </div>
       <br></br>
     </>
   );
