@@ -1,32 +1,21 @@
-.new-expense__controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    text-align: left;
+.payment_form_controls {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
 }
 
-.new-expense__control label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.new-expense__control input {
-    font: inherit;
-    padding: 0.5rem;
+.payment_form_controls input {
     border-radius: 6px;
     border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
+    margin-bottom: 2px;
 }
 
-.new-expense__actions {
-    text-align: right;
+.payment_form_actions {
+    margin-bottom: 10px;
 }
 
 .close {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50; /* Green */
-  }
+    border: 2px solid #4CAF50;
+    /* Green */
+}

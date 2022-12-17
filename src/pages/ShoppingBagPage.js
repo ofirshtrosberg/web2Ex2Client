@@ -3,9 +3,7 @@ import "../styles/ShoppingBagProduct.css";
 import NavBar from "../components/NavBar";
 import "../styles/ShoppingBagPage.css";
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import axios from "axios";
 import { DeleteOutline } from "@mui/icons-material";
 
 export default function ShoppingBagPage() {
@@ -98,12 +96,10 @@ export default function ShoppingBagPage() {
         />
       </Box>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <div className="total text-center">
         <p>Total price : {totalPrice} ₪</p>
       </div>
+      <br></br>
     </>
   );
 }
