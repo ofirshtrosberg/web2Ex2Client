@@ -11,7 +11,7 @@ function Product(prod) {
   const [productid, setProductId] = useState(prod.id);
 
   const addToCartHandler = (event) => {
-    fetch("http://localhost:3000/addProductToCart", {
+    fetch("http://localhost:3000/productsPage/addProductToCart", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

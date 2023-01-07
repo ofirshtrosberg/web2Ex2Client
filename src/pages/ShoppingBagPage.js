@@ -10,7 +10,7 @@ export default function ShoppingBagPage() {
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
-    fetch("http://localhost:3000/userProducts/shoppingBag")
+    fetch("http://localhost:3000/shoppingBag")
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
@@ -22,7 +22,7 @@ export default function ShoppingBagPage() {
     );
   }, [products]);
   const handleDelete = (id) => {
-    fetch("http://localhost:3000/userProducts/shoppingBag/delete", {
+    fetch("http://localhost:3000/shoppingBag/delete", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

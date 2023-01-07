@@ -7,7 +7,7 @@ function Popup2(props) {
     var nameValue = document.getElementById("cname").value;
     console.log(nameValue);
 
-    fetch("http://localhost:3000/addOrder", {
+    fetch("http://localhost:3000/shoppingBag/addOrder", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -15,8 +15,9 @@ function Popup2(props) {
         credit_card_number: document.getElementById("ccnum").value,
       }),
     });
+    //!!! deleting the products before finish creating the order -> null products in order
     event.preventDefault();
-    fetch("http://localhost:3000/userProducts").catch((err) =>
+    fetch("http://localhost:3000/shoppingBag/clearBag").catch((err) =>
       console.log(err)
     );
     window.location.reload();

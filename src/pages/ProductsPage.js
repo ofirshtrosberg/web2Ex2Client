@@ -7,7 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("http://localhost:3000/productsPage")
       .then((Response) => Response.json())
       .then((data) => setProducts(data))
       .catch((err) => console.log(err));
